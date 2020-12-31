@@ -1,0 +1,20 @@
+
+.form-container {
+  border-radius: 7px 7px 7px 7px;
+  border: 1px solid rgb(238, 238, 237);
+  background-color: white;
+}
+.title-form {
+  margin-top: 1em;
+}
+.text-required {
+  color: rgb(235, 57, 57);
+  margin-left: 0.5em;
+}
+button {
+  align-self: flex-end;
+}
+body {
+  width: 98%;
+  overflow-x: hidden;
+}

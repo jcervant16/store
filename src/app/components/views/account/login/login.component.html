@@ -1,0 +1,47 @@
+<body>
+  <div class="main-container row align-items-center justify-content-center vh-100">
+    <div class="form-container col-lg-5 col-md-6 col-sm-8 col-10 p-0 m-0">
+      <div class="row p-2 ml-1 mt-4">
+        <h2>LOGIN</h2>
+      </div>
+  
+      <form #vcFrmLogin [formGroup]="frmLogin" class="fields-form col-lg-12 mt-5" autocomplete="off">
+        <div class="row mt-2 mx-1">
+          <input class="form-control form-control-lg" id="inputPrimary" name="username" [formControl]="f.username"
+            placeholder="Usuario" [ngClass]="{'is-invalid': f.username.invalid && f.username.touched }"
+            aria-describedby="userHelp" />
+          <div id="userHelp" class="form-text invalid-feedback" *ngIf="f.username.invalid && f.username.touched">
+            <span *ngIf="f.username.errors?.required" class="text-required">
+              Usuario es requerido
+            </span>
+          </div>
+  
+  
+        </div>
+  
+        <div class="row mt-2 mx-1">
+          <input class="form-control form-control-lg" type="password" name="password" [formControl]="f.password"
+            placeholder="Contraseña" [ngClass]="{'is-invalid': f.password.invalid && f.password.touched }"
+            aria-describedby="userHelp" />
+  
+          <div id="userHelp" class="form-text invalid-feedback" *ngIf="f.password.invalid && f.password.touched">
+            <span *ngIf="f.password.errors?.required" class="text-required">
+              Contraseña es requerido
+            </span>
+          </div>
+        </div>
+        <div class="text-center mt-5">
+          <a [routerLink]="'/forgot-password'" class="mat-primary text-center full-width">Olvidaste tu
+            Contraseña?</a>
+          <span fxFlex></span>
+        </div>
+        <div class="row mt-4">
+  
+          <button (click)="onSignin()" class="btn btn-primary btn-lg btn-block">
+            Ingresar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>

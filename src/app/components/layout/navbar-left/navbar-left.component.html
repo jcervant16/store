@@ -1,0 +1,37 @@
+<div class="side-nav" #aside>
+<!-- <div style="width: 90px; height: 90px; border: 1px solid black;"></div> -->
+
+  <nav>
+    <ul>
+      <li *ngFor="let item of hierarchicalMenu">
+        <ng-container *ngIf="item.listPortal && item.listPortal.length > 0; else elseTemplate">
+          <button class="dropdown-btn" routerLinkActive="active"
+            data-toggle="collapse" attr.data-target="#multiCollapse-{{item.commandMenu}}" aria-expanded="false">
+            <span class="icons icon-{{ item.iconName }}"></span>
+            <span class="title">{{ item.description }}</span>
+            <i class="icon-down" style="margin-top: 16px;"></i>
+          </button>
+          <div class="dropdown-container collapse " id="multiCollapse-{{ item.commandMenu }}">
+            <a *ngFor="let submenu of item.listPortal" routerLink="/{{ submenu.commandMenu }}" href="#"
+              routerLinkActive="active">
+              <span class="icons icon-{{ submenu.iconName }}"></span>
+              <span class="title">{{ submenu.description }}</span>
+            </a>
+          </div>
+        </ng-container>
+        <ng-template #elseTemplate>
+          <a routerLinkActive="active" routerLink="/{{ item.commandMenu }}">
+            <span class="icons icon-" ><i class="{{ item.iconName }}"></i></span>
+            <span class="title">{{ item.description }}</span>
+          </a>
+        </ng-template>
+      </li>
+      
+    </ul>
+  </nav>
+</div>
+<div class="btn-collapse"
+ (click)="collapseNavBarAside()" #btnCollapse>
+  <i  [className]="collapseActive ? 'fas fa-times':'fas fa-align-right'" ></i>
+</div>
+

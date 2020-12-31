@@ -1,0 +1,125 @@
+.side-nav{
+    position: fixed;
+    width: 256px;
+    padding-top: 45px;
+    background-color: #373a3c;
+    height: 100vh;
+    z-index: 4;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    transition: width 0.5s;
+    -webkit-transition: width 0.5s;
+    -o-transition: width 0.5s;
+    -moz-transition: width 0.5s;
+}
+
+.side-nav::-webkit-scrollbar{
+    display: none;
+}
+
+.side-collapse{
+    width: 60px;
+    transition: width 0.5s;
+    -webkit-transition: width 0.5s;
+    -o-transition: width 0.5s;
+    -moz-transition: width 0.5s;
+}
+
+.active{
+    background: rgb(94, 92, 92);
+    color: #fa1f56 !important;
+}
+
+nav ul{
+    padding: 0px
+}
+
+nav ul li{
+    list-style: none;
+    width: 256px;
+}
+
+nav ul li a, nav ul li .dropdown-btn{
+    color: white;
+    text-decoration: none;
+    display: inline-flex;
+    width: 256px;
+
+}
+
+nav ul li a span.icons, .dropdown-btn span.icons{
+    font-size: 26px !important;
+    width: 57px;
+    height: 45px;
+    text-align: center;
+    padding-top: 10px;
+}
+
+nav ul li a span.title, nav ul li .dropdown-btn span.title{
+    position: relative;
+    top: 10px;
+    left: 15px;
+    width: 70%;
+    font-size: 16px;
+}
+
+
+.btn-collapse{
+    color: white;
+    background-color: rgb(214, 52, 52);
+    border-radius: 50%;
+    position: fixed;
+    width: 25px;
+    height: 25px;
+    padding-top: 1px;
+    padding-left: 5px;
+    margin-right: -1px;
+    box-shadow: 0px 0px 3px black;
+    top: 120px;
+    left: 244px;
+    cursor: pointer;
+    transition: left 0.5s;
+    -webkit-transition: left 0.5s;
+    -o-transition: left 0.5s;
+    -moz-transition: left 0.5s;
+    z-index: 6;
+}
+
+
+.btn-collapse-active{
+    left: 50px;
+    transition: left 0.5s;
+    -webkit-transition: left 0.5s;
+    -o-transition: left 0.5s;
+    -moz-transition: left 0.5s;
+ 
+}
+
+.dropdown-container{
+    background-color: #2A2A2A;
+}
+
+.dropdown-btn{
+    display: block;
+    border: none;
+    background: none;
+    width:100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+    padding-left: 0px
+}
+
+.dropdown-btn .fa-caret-down{
+    position: relative;
+    right: 0;
+    margin-top: 15px;
+}
+
+
+
+@media (max-width: 700px){
+    .side-nav{
+        /* display: none;         */
+    }
+}
